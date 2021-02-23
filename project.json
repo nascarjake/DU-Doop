@@ -1,0 +1,66 @@
+{
+  "name": "doop",
+  "description": "Ship XP and Quest System for Dual Universe",
+  "sourcePath": "src",
+  "outputPath": "out",
+  "builds": {
+    "main": {
+      "name": "main",
+      "slots": {
+        "screen1": {
+          "name": "screen1",
+          "type": "screen"
+        },
+        "progressDB": {
+          "name": "progressDB",
+          "type": "databank"
+        },
+        "missionDB": {
+          "name": "missionDB",
+          "type": "databank"
+        },
+        "storeDB": {
+          "name": "storeDB",
+          "type": "databank"
+        },
+        "assetDB": {
+          "name": "assetDB",
+          "type": "databank"
+        },
+        "auxassetDB": {
+          "name": "auxassetDB",
+          "type": "databank"
+        }
+      }
+    },
+    "preload": {
+      "name": "preload",
+      "slots": {
+        "assetDB": {
+          "name": "assetDB",
+          "type": "databank"
+        },
+        "storeDB": {
+          "name": "storeDB",
+          "type": "databank"
+        },
+        "missionDB": {
+          "name": "missionDB",
+          "type": "databank"
+        }
+      }
+    }
+  },
+  "targets": {
+    "development": {
+      "name": "development",
+      "handleErrors": true,
+      "minify": false
+    },
+    "prod": {
+      "name": "prod",
+      "handleErrors": false,
+      "minify": true
+    }
+  }
+}

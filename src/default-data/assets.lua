@@ -1,0 +1,3 @@
+return {
+    testImg = 'blah'
+}
