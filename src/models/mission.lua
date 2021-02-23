@@ -40,4 +40,9 @@ function Mission:getLibraryIndex ()
     return self.db.getStringValue(MissionLibraryIndexKey)
 end
 
+function Mission:start ()
+    self.startLocation = ''
+    -- transform current location to pos string
+end
+
 return Mission

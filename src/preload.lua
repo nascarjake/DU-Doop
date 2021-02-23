@@ -8,6 +8,6 @@ local store = require('default-data/store')
 
 local dbutil = require('util/db')
 
-dbutil.inject(assetDB, assets)
-dbutil.inject(missionDB, missions)
-dbutil.inject(storeDB, store)
+dbutil.injectBulk(assetDB, assets)
+dbutil.injectBulk(missionDB, missions)
+dbutil.injectBulk(storeDB, store)

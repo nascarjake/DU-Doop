@@ -4,6 +4,8 @@ local util = require('util/basic')
 local arrayHasValue = util.arrayHasValue
 local isInt = util.isInt
 
+
+
 local inject = function (db, dataTable, ignoreProps, prefix)
     if not prefix and dataTable and dataTable.id then 
         prefix = dataTable.id
@@ -26,6 +28,12 @@ local inject = function (db, dataTable, ignoreProps, prefix)
                 end
             end
         end
+    end
+end
+
+local injectBulk = function(db, array, ignoreProps, prefix)
+    for _, item in ipairs(array) do
+        inject(db, item, ignoreProps, prefix)
     end
 end
 

@@ -34,6 +34,14 @@
         "core": {
           "name": "core",
           "type": "core"
+        },
+        "receiver": {
+          "name": "receiver",
+          "type": "receiver"
+        },
+        "emitter": {
+          "name": "emitter",
+          "type": "emitter"
         }
       }
     },
@@ -51,6 +59,19 @@
         "missionDB": {
           "name": "missionDB",
           "type": "databank"
+        }
+      }
+    },
+    "quest-giver": {
+      "name": "quest-giver",
+      "slots": {
+        "screen": {
+          "name": "screen",
+          "type": "screen"
+        },
+        "emitter": {
+          "name": "emitter",
+          "type": "emitter"
         }
       }
     }
