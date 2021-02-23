@@ -1,5 +1,6 @@
 local BaseModel = require('models/base-model')
 local Faction = {
+    db = progressDB,
     id = '',
     name = '',
     description = '',
