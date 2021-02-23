@@ -30,6 +30,10 @@
         "auxassetDB": {
           "name": "auxassetDB",
           "type": "databank"
+        },
+        "core": {
+          "name": "core",
+          "type": "core"
         }
       }
     },

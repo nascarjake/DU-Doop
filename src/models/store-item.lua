@@ -1,4 +1,4 @@
-local Base = require('models/base')
+local BaseModel = require('models/base-model')
 local StoreItem = {
     id = '',
     name = '',
@@ -10,7 +10,7 @@ local StoreItem = {
 }
 
 function StoreItem:new (o)
-    return Base:new (o)
+    return BaseModel:new (o)
 end
 
 return StoreItem

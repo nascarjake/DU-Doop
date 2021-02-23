@@ -6,8 +6,8 @@ local assets = require('default-data/assets')
 local missions = require('default-data/missions')
 local store = require('default-data/store')
 
-local dbInject = require('util/db').dbInject
+local dbutil = require('util/db')
 
-dbInject(assetDB, assets)
-dbInject(missionDB, missions)
-dbInject(storeDB, store)
+dbutil.inject(assetDB, assets)
+dbutil.inject(missionDB, missions)
+dbutil.inject(storeDB, store)
