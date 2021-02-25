@@ -8,9 +8,7 @@ local State = {
     isInit = false
 }
 
-function State:new (o)
-    return Base:new (o)
-end
+
 
 function State:enter ()
     if not self.isInit then 
@@ -27,4 +25,4 @@ function State:exit (transition)
     self.transition = transition
 end
 
-return State
+return Class.new('State', State, BaseModel)

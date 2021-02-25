@@ -1,10 +1,3 @@
-local Base = {}
-
-function Base:new (o)
-    o = o or {}   
-    setmetatable(o, self)
-    self.__index = self
-    return o
-end
-
+local Class = require('@wolfe-labs/Core/Class')
+local Base = Class.new('Base')
 return Base

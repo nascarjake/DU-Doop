@@ -46,8 +46,8 @@ local strSplit = function (str, sep)
 end
 
 return { 
-    isInt = isInt
-    posToWorld = convertPosToWorld.
+    isInt = isInt,
+    posToWorld = convertPosToWorld,
     arrayHasValue = arrayHasValue,
     strSplit = strSplit
 }

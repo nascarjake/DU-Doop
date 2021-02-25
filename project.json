@@ -41,7 +41,7 @@
         },
         "emitter": {
           "name": "emitter",
-          "type": "emitter"
+          "type": null
         }
       }
     },
@@ -71,7 +71,7 @@
         },
         "emitter": {
           "name": "emitter",
-          "type": "emitter"
+          "type": null
         }
       }
     }
@@ -87,5 +87,21 @@
       "handleErrors": false,
       "minify": true
     }
-  }
+  },
+  "libs": [
+    {
+      "id": "@wolfe-labs/Core",
+      "path": "libs\\@wolfe-labs\\Core",
+      "remote": {
+        "git": "https://github.com/wolfe-labs/DU-Core.git"
+      }
+    },
+    {
+      "id": "@wolfe-labs/Screenmancy",
+      "path": "libs\\@wolfe-labs\\Screenmancy",
+      "remote": {
+        "git": "https://github.com/wolfe-labs/DU-Screenmancy.git"
+      }
+    }
+  ]
 }

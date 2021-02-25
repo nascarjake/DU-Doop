@@ -1,3 +1,4 @@
+local Class = require('@wolfe-labs/Core/Class')
 local StateLibrary = require('default-data/states')
 local State = require('models/state')
 local Base = require('models/base')
@@ -36,4 +37,4 @@ function StateManager:update ()
     end
 end
 
-return StateManager
+return Class.new('StateManager', StateManager, Base)

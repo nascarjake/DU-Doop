@@ -1,5 +1,7 @@
 local BaseModel = require('models/base-model')
+local Class = require('@wolfe-labs/Core/Class')
 local StoreItem = {
+    db = storeDB,
     id = '',
     name = '',
     description = '',
@@ -9,8 +11,4 @@ local StoreItem = {
     useParams = '' -- string to be parsed by function
 }
 
-function StoreItem:new (o)
-    return BaseModel:new (o)
-end
-
-return StoreItem
+return Class.new('StoreItem', StoreItem, BaseModel)

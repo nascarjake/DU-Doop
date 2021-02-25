@@ -1,3 +1,7 @@
-if not script then
-    script = {}
-end 
+require('config/main-export')
+require('@wolfe-labs/Core:Events')
+system.print('ready')
+local AvatarScreen = require('ui/screens/avatar')
+system.print('set')
+AvatarScreen.new(screen1)
+system.print('done')

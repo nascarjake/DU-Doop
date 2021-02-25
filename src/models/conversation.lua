@@ -1,6 +1,6 @@
 local BaseModel = require('models/base-model')
 local Class = require('@wolfe-labs/Core/Class')
-local Faction = {
+local Conversation = {
     db = progressDB,
     id = '',
     name = '',
@@ -9,4 +9,5 @@ local Faction = {
     logo = '' --assetId
 }
 
-return Class.new('Faction', Faction, BaseModel)
+
+return Class.new('Conversation', Converastion, BaseModel)

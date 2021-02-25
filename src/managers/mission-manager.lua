@@ -1,3 +1,4 @@
+local Class = require('@wolfe-labs/Core/Class')
 local Mission = require('models/mission')
 local Base = require('models/base')
 local util = require('util/basic')
@@ -42,4 +43,4 @@ function MissionManager:update ()
     end
 end
 
-return MissionManager
+return Class.new('MissionManager', MissionManager, Base)

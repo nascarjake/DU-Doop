@@ -1,10 +1,12 @@
 local BaseModel = require('models/base-model')
+local Class = require('@wolfe-labs/Core/Class')
 local log = require('util/log')
 local posToWorld = require('util/basic').posToWorld
 
 local MissionLibraryIndexKey = '~~MissionIndex~~'
 
 local Mission = {
+    db = missionDB,
     id = '',
     title = '',
     description = '',
@@ -17,9 +19,7 @@ local Mission = {
     createdBy = ''
 }
 
-function Mission:new (o)
-    return BaseModel:new (o)
-end
+
 
 function Mission:checkGoal ()
     if self.goalLocation then
@@ -45,4 +45,4 @@ function Mission:start ()
     -- transform current location to pos string
 end
 
-return Mission
+return Class.new('Mission', Mission, BaseModel)

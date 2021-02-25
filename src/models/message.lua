@@ -1,4 +1,5 @@
 local BaseModel = require('models/base-model')
+local Class = require('@wolfe-labs/Core/Class')
 local Message = {
     db = progressDB,
     id = '',
@@ -12,10 +13,6 @@ local Message = {
 
 local msgPrefix = '$doop$'
 local msgSep = '$%$'
-
-function Message:new (o)
-    return BaseModel:new (o)
-end
 
 function Message:send (msg, channel)
     if not channel then channel = 'open' end
@@ -36,4 +33,4 @@ function Message:toString ()
     return msgPrefix .. self.fromPlayerId .. msgSep .. self.fromConstructId .. msgSep .. self.title .. msgSep .. self.message .. msgSep .. self.timestamp
 end
 
-return Message
+return Class.new('Message', Message, BaseModel)

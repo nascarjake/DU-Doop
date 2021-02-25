@@ -1,4 +1,5 @@
 local StoreItem = require('models/store-item')
+local Class = require('@wolfe-labs/Core/Class')
 local Base = require('models/base')
 local util = require('util/basic')
 local StoreManager = {
@@ -32,4 +33,4 @@ function StoreManager:update ()
 
 end
 
-return StoreManager
+return Class.new('StoreManager', StoreManager, Base)
