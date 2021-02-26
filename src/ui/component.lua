@@ -6,6 +6,7 @@ local Component = {}
 
 function Component:__constructor (parent, ...)
     system.print('comp ' .. Utils.dumpTable(parent, 1))
+    system.print('comp2 ' .. Utils.dumpTable(self, 1))
     system.print('comp ' .. Utils.dumpTable({...}, 1))
     self:__init(parent)
     self.contents = self:getComponentContent();

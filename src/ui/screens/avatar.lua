@@ -10,7 +10,7 @@ local Avatar = {}
 
 function Avatar:getPageContent (parent) 
     system.print('pageContent ' .. Utils.dumpTable(parent, 1))
-    self:addElement(AvatarComponent.new(self))
+    self:addElement(AvatarComponent:new(self))
 end
 
 return Class.new('Avatar', Avatar, Page, Screen, Events)
