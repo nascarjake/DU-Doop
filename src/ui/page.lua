@@ -1,17 +1,24 @@
 local Class = require('@wolfe-labs/Core:Class')
+local Events = require('@wolfe-labs/Core:Events')
 local Screen = require('@wolfe-labs/Screenmancy:Screen')
+local Util = require('@wolfe-labs/Core:Utils')
 
 local Page = {}
 
-function Page:__constructor (parent)
-    local out = Screen:__costructor(parent)
-    out.elements = self:getPageContent()
-    return out
+function Page:__constructor (_, parent, delay)
+    Page.__parent.__constructor(self, parent)
+    self:getPageContent(parent)
+    if delay == nil then self:render() end
+end
+
+function Page:init (parent)
+    self:iinit(parent)
+    self:getPageContent(self)
 end
 
 function Page:getPageContent () 
-    -- return page contents from here
-    return ''
+    system.print('nahbruh')
+    -- run page:addElement() here
 end
 
-return Class.new('Page', Page, Screen)
+return Class.new('Page', Page, Screen, Events)
