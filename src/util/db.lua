@@ -1,5 +1,7 @@
-local DELIM = '$%$'
+local DELIM = '~'
+local SUB_DELIM = '`'
 local Utils = require('@wolfe-labs/Core:Utils')
+local Table = require('@wolfe-labs/Core:Table')
 local util = require('util/basic')
 local arrayHasValue = util.arrayHasValue
 local isInt = util.isInt
@@ -29,8 +31,8 @@ local inject = function (db, dataTable, ignoreProps, prefix)
             elseif t == 'table' then
                 local valStr = ''
                 for i, v in pairs(value) do
-                    if not #valStr then valStr = v
-                    else valStr = valStr..DELIM..i .. '~#~' .. v end
+                    if not #valStr then valStr = i .. SUB_DELIM .. v
+                    else valStr = valStr..DELIM..i .. SUB_DELIM .. v end
                 end
                 db.setStringValue(k, valStr)
             end
@@ -66,7 +68,9 @@ local extract = function (db, model, id, ignoreProps)
                 out[key] = {}
                 local valStr = db.getStringValue(k)
                 for _, value in ipairs(Utils.split(valStr,DELIM)) do
-                    
+                    for k, v in ipairs(Utils.split(value,SUB_DELIM) do
+                        out[key][k] = v
+                    end
                 end
             end
         end

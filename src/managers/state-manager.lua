@@ -9,10 +9,6 @@ local StateManager = {
     currentState = nil,
 }
 
-function StateManager:new (o)
-    return Base:new (o)
-end
-
 function StateManager:loadLibrary ()
     self.library = StateLibrary
 end

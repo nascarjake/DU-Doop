@@ -8,10 +8,6 @@ local MissionManager = {
     completedMissions = {} -- array of missionIDs 
 }
 
-function MissionManager:new (o)
-    return Base:new (o)
-end
-
 function MissionManager:loadLibrary ()
     self.library = {}
     local ids = util.strSplit(Mission:getLibraryIndex())
@@ -22,6 +18,7 @@ end
 
 function MissionManager:startMission (id)
     if util.arrayHasValue(self.completedMissions, id) then
+        self.library[id]:start()
         table.insert(self.currentMissions, self.library[id])
     else
         return false
@@ -34,7 +31,7 @@ function MissionManager:update ()
         if mission.checkGoal() then
             table.insert(completedMissions, mission.id)
             table.insert(indexesToRemove, i)
-            mission.complete = true
+            mission:complete()
             library[mission.id] = mission
         end
     end

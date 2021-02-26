@@ -7,10 +7,6 @@ local StoreManager = {
     inventory = {}
 }
 
-function StoreManager:new (o)
-    return Base:new (o)
-end
-
 function StoreManager:loadLibrary ()
     self.library = {}
     local ids = util.strSplit(StoreItem:getLibraryIndex())
